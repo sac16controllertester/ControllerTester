@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="FM4CC.FaultModels.AllowedOscillation.GUI.ConfigurationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="340" d:DesignWidth="340">
+    <StackPanel Orientation="Vertical">
+        <GroupBox Header="Simulation configuration" VerticalAlignment="Top">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="150*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="0,8,0,7">Allowed oscillation</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="0,8,0,7">Desired value step size</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="0,8,0,7">Generate sine wave input test cases</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="0,8,0,7">Sine wave frequency</TextBlock>
+
+                <Controls:NumericUpDown Grid.Column="1" Grid.Row="0" x:Name="AllowedOscillationPercentageNumUpDown" StringFormat="{}{0:N2}%" Margin="0,2,0,3" Minimum="0.01" Maximum="100" Value="1"></Controls:NumericUpDown>
+                <Controls:NumericUpDown Grid.Column="1" Grid.Row="1" x:Name="DesiredValueStepSizeNumUpDown" Margin="0,2,0,3" Value="1"></Controls:NumericUpDown>
+                <CheckBox Grid.Column="1" Grid.Row="2" Margin="0,2,0,3" HorizontalAlignment="Right" x:Name="GenerateSineTestCasesCheckbox"></CheckBox>
+                <Controls:NumericUpDown Grid.Column="1" Grid.Row="3" x:Name="SineFrequencyNumUpDown" StringFormat="{}{0:N2} Hz" Margin="0,2,0,3" Minimum="0.01" Value="1"></Controls:NumericUpDown>
+            </Grid>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

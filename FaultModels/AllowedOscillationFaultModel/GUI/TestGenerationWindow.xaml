@@ -1,0 +1,122 @@
+﻿<Controls:MetroWindow x:Class="FM4CC.FaultModels.AllowedOscillation.GUI.TestGenerationWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" 
+             Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>       
+        
+        <GroupBox Grid.Row="0" x:Name="StepTopExplorationGroupBox" Header="Step top limit test cases">
+            <DataGrid 
+                ItemsSource="{Binding StepTopExplorationResults}"
+                AutoGenerateColumns="false" 
+                SelectionMode="Extended" 
+                SelectionUnit="FullRow" 
+                CanUserSortColumns="True"
+                CanUserResizeColumns="True"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserResizeRows="False"
+                CanUserReorderColumns="False"
+                x:Name="StepTopExplorationDataGrid" 
+                EnableRowVirtualization="True" 
+                EnableColumnVirtualization="True"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Type" IsReadOnly="True" Binding="{Binding Type}"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Passed" Width="80" Binding="{Binding Passed}" IsReadOnly="True" ></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Initial Desired" IsReadOnly="True" Binding="{Binding InitialDesired}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Final Desired" IsReadOnly="True" Binding="{Binding FinalDesired}"></DataGridTextColumn>
+                    
+                    <DataGridTemplateColumn Header="Run" IsReadOnly="True" Width="70" CanUserSort="False">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Width="40" Height="20" Click="RunButton_StepTop_Click" >Run</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Header="Possible Stability Problems" Width="160" Binding="{Binding PossibleStabilityProblems}" IsReadOnly="True"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Save" Width="60" Binding="{Binding Save}" ></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" x:Name="StepBottomExplorationGroupBox" Header="Step bottom limit test cases">
+            <DataGrid 
+                ItemsSource="{Binding StepBottomExplorationResults}"
+                AutoGenerateColumns="false" 
+                SelectionMode="Extended" 
+                SelectionUnit="FullRow" 
+                CanUserSortColumns="True"
+                CanUserResizeColumns="True"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserResizeRows="False"
+                CanUserReorderColumns="False"
+                x:Name="StepBottomExplorationDataGrid" 
+                EnableRowVirtualization="True" 
+                EnableColumnVirtualization="True"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Type" IsReadOnly="True" Binding="{Binding Type}"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Passed" Width="80" Binding="{Binding Passed}" IsReadOnly="True" ></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Initial Desired" IsReadOnly="True" Binding="{Binding InitialDesired}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Final Desired" IsReadOnly="True" Binding="{Binding FinalDesired}"></DataGridTextColumn>
+
+                    <DataGridTemplateColumn Header="Run" IsReadOnly="True" Width="70" CanUserSort="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="40" Height="20" Click="RunButton_StepBottom_Click" >Run</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Header="Possible Stability Problems" Width="160" Binding="{Binding PossibleStabilityProblems}" IsReadOnly="True"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Save" Width="60" Binding="{Binding Save}" ></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <GroupBox Grid.Row="2" x:Name="SineExplorationGroupBox" Header="Sine wave input test cases">
+            <DataGrid 
+                ItemsSource="{Binding SineExplorationResults}"
+                AutoGenerateColumns="false" 
+                SelectionMode="Extended" 
+                SelectionUnit="FullRow" 
+                CanUserSortColumns="True"
+                CanUserResizeColumns="True"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserResizeRows="False"
+                CanUserReorderColumns="False"
+                x:Name="SineExplorationDataGrid" 
+                EnableRowVirtualization="True" 
+                EnableColumnVirtualization="True"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Type" IsReadOnly="True" Binding="{Binding Type}"></DataGridTextColumn>
+                    <DataGridCheckBoxColumn Header="Passed" Width="80" Binding="{Binding Passed}" IsReadOnly="True" ></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Initial Desired" IsReadOnly="True" Binding="{Binding InitialDesired}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Final Desired" IsReadOnly="True" Binding="{Binding FinalDesired}"></DataGridTextColumn>
+
+                    <DataGridTemplateColumn Header="Run" IsReadOnly="True" Width="70" CanUserSort="False">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="40" Height="20" Click="RunButton_Sine_Click" >Run</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Header="Possible Stability Problems" Width="160" Binding="{Binding PossibleStabilityProblems}" IsReadOnly="True"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="Save" Width="60" Binding="{Binding Save}" ></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <Button Height="30" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Click="Save_Click" x:Name="SaveButton">Save</Button>
+    </Grid>
+</Controls:MetroWindow>
